@@ -37,7 +37,7 @@ function App() {
       {ref.current}
       <button
         onClick={() => {
-          ref.current = 15;
+          ref.current=15;
         }}>
         chang ref
       </button>
