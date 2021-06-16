@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import { useRef, useState } from "react";
 
@@ -13,8 +13,8 @@ function App() {
 
   return (
     <div className="App">
+      {/* //A has no memory doesn't update ui */}
       {a}
-
       <button
         onClick={() => {
           // a = 15
@@ -24,16 +24,23 @@ function App() {
         change value
       </button>
 
+      {/* b button uses usestate, has its memory that keeps when component rerenders*/}
       {b}
-
       <button
         onClick={() => {
           setb(b + 1);
         }}>
         change state
       </button>
-
+      
+      {/* useRef it will keep its value but doesn't refresh its component, when rerenders the new screen */}
       {ref.current}
+      <button
+        onClick={() => {
+          ref.current = 15;
+        }}>
+        chang ref
+      </button>
     </div>
   );
 }
