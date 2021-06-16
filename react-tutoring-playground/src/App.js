@@ -1,23 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  // so const b is destructred giving us the inital value
+  //b can be any variable name or first value, second value setb gives us a function
+  //useState(0) 0 is the initial value of this variable
+
+  let a = 12
+  const [b, setb] = useState(0)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {a}
+      
+      <button onClick={() => {
+        a = 15
+        console.log(a)
+      }}>change value</button>
+
+      {b}
+
+      <button onClick={() => {
+        setb(b+1)
+      }}>change state</button>
     </div>
   );
 }
